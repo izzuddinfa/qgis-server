@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  qgis-server:
+    build: .
+    ports:
+      - "8082:80"
+    volumes:
+      - ./qgis/configs:/home/qgis/configs
+      - ./qgis/projects:/usr/lib/cgi-bin/projects
+    networks:
+      - qgis-network
+
+networks:
+  qgis-network:
+    driver: bridge
