@@ -32,9 +32,12 @@
 6. Open qgis-server.conf
    ```bash
    nano ./apache/qgis-server.conf
+7. Edit dockerfile
+   ```docker
+   nano Dockerfile
 8. Change "gis_server" to match a database service used in .pg_service.conf
-   ```apache
-   SetEnv PGSERVICE "gis_server"
+   ```docker
+   ENV PGSERVICE=gis_server
 9. Run this
    ```bash
    chmod +x ./qgis/projects/append_project.sh &&
