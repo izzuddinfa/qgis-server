@@ -40,19 +40,19 @@
    chmod +x ./qgis/projects/append_project.sh &&
    chmod +x ./qgis/projects/delete_project.sh
 10. Build your docker-compose
-   ```bash
-   docker-compose build
+    ```bash
+    docker-compose build
 11. Run your docker-compose
-   ```bash
-   docker-compose up -d
-12. Check from the browser
-   ```bash
-   http://localhost:8080/gis/projects/sample_pt/ows?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities
+    ```bash
+    docker-compose up -d
 
 #Append and delete a project
 1. For appending a project run this, then insert the project name and the service name
    ```bash
    docker exec -it qgis-server_qgis-server_1 bash "/usr/lib/cgi-bin/projects/append_project.sh"
-2. For deleting a project, then insert the project name
+2. Check for the project
+   ```
+   http://localhost:8082/gis/projects/terminal_pt/ows?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities
+4. For deleting a project, then insert the project name
    ```bash
    docker exec -it qgis-server_qgis-server_1 bash "/usr/lib/cgi-bin/projects/delete_project.sh"
