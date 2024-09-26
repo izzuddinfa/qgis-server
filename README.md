@@ -29,23 +29,20 @@
    user=
    password=
 
-6. Open qgis-server.conf
-   ```bash
-   nano ./apache/qgis-server.conf
-7. Edit dockerfile
+6. Edit dockerfile
    ```docker
    nano Dockerfile
-8. Change "gis_server" to match a database service used in .pg_service.conf
+7. Change "gis_server" to match a database service used in .pg_service.conf
    ```docker
    ENV PGSERVICE=gis_server
-9. Run this
+8. Run this
    ```bash
    chmod +x ./qgis/projects/append_project.sh &&
    chmod +x ./qgis/projects/delete_project.sh
-10. Build your docker-compose
-    ```bash
-    docker-compose build
-11. Run your docker-compose
+9. Build your docker-compose
+   ```bash
+   docker-compose build
+10. Run your docker-compose
     ```bash
     docker-compose up -d
 
