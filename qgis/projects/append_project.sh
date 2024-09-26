@@ -5,10 +5,10 @@ read -p "Masukkan nama project: " nama_project
 read -p "Masukkan nama service db: " nama_service
 
 # Membuat direktori dengan nama project
-mkdir -p ./$nama_project
+mkdir -p /usr/lib/cgi-bin/projects/$nama_project
 
 # Membuat symbolic link ke qgis_mapserv.fcgi
-ln -s ../../qgis_mapserv.fcgi ./$nama_project
+ln -s ../../qgis_mapserv.fcgi /usr/lib/cgi-bin/projects/$nama_project
 
 # Menambahkan konfigurasi ke file /home/qgis/qgis-location.conf
 bash -c "echo '<Location /gis/projects/$nama_project/qgis_mapserv.fcgi>' >> /home/qgis/configs/qgis-location.conf"
