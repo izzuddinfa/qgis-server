@@ -13,8 +13,6 @@ RUN apt-get update && \
 ENV TZ=Asia/Jakarta
 RUN ln -fs /usr/share/zoneinfo/$TZ /etc/localtime && \
     dpkg-reconfigure -f noninteractive tzdata
-ENV PGSERVICEFILE=/home/qgis/configs/.pg_service.conf
-ENV PGSERVICE = gis_server
 
 # Enable modul yang diperlukan untuk QGIS Server di Apache2
 RUN a2enmod fcgid && a2enmod rewrite

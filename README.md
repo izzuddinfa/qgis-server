@@ -29,12 +29,12 @@
    user=
    password=
 
-6. Edit dockerfile
-   ```docker
-   nano Dockerfile
+6. Edit qgis-server.conf
+   ```bash
+   nano ./apache/qgis-server.conf
 7. Change "gis_server" to match a database service used in .pg_service.conf
-   ```docker
-   ENV PGSERVICE=gis_server
+   ```ini
+   SetEnv PGSERVICE "gis_server"
 8. Run this
    ```bash
    chmod +x ./qgis/projects/append_project.sh &&
@@ -46,7 +46,7 @@
     ```bash
     docker-compose up -d
 
-#Append and delete a project
+# Append and delete a project
 1. For appending a project run this, then insert the project name and the service name
    ```bash
    docker exec -it qgis-server_qgis-server_1 bash "/usr/lib/cgi-bin/projects/append_project.sh"
