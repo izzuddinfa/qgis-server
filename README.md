@@ -53,6 +53,9 @@
 2. Check for the project
    ```
    http://localhost:8082/gis/projects/terminal_pt/ows?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities
-4. For deleting a project, then insert the project name
+3. For deleting a project, then insert the project name
    ```bash
    docker exec -it qgis-server_qgis-server_1 bash "/usr/lib/cgi-bin/projects/delete_project.sh"
+4. Restart your docker container
+   ```bash
+   docker-compose restart
